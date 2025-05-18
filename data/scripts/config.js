@@ -1,5 +1,5 @@
 /**
- * Configs used primarily by CustomUtils
+ * Configs used by CustomUtils
  */
 class Config {
   /**

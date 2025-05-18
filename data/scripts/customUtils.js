@@ -202,16 +202,16 @@ class CustomUtils extends customJS.Config.constructor {
    * @param {object} dv DataviewAPI
    */
   timeSpent(dv) {
-    let firstFile = dv
+    const firstFile = dv
       .pages(`"${this.GLOBAL_FOLDER}"`)
       .file.sort((t) => t.ctime)[0];
     // NOTE: dv uses Luxon
-    let totalDays = Math.ceil(
+    const totalDays = Math.ceil(
       dv.date("now").diff(firstFile.ctime, "days").toObject().days
     );
-    let allFiles = dv.pages(`"${this.GLOBAL_FOLDER}"`).file;
-    let totalFiles = allFiles.length;
-    let totalTasks = allFiles.tasks.length;
+    const allFiles = dv.pages(`"${this.GLOBAL_FOLDER}"`).file;
+    const totalFiles = allFiles.length;
+    const totalTasks = allFiles.tasks.length;
 
     dv.paragraph(
       `You have been using [[Life_OS]] for ${totalDays} days, with ${totalFiles} files & ${totalTasks} tasks created.`
@@ -223,11 +223,10 @@ class CustomUtils extends customJS.Config.constructor {
    * @param {object} dv DataviewAPI
    */
   recentlyModified(dv) {
-    dv.list(
-      dv
-        .pages(`"${this.GLOBAL_FOLDER}"`)
-        .sort((p) => p.file.mtime, "desc")
-        .limit(5).file.link
-    );
+    const mod_pages = dv
+      .pages(`"${this.GLOBAL_FOLDER}"`)
+      .sort((p) => p.file.mtime, "desc")
+      .limit(5).file.link;
+    dv.list(mod_pages);
   }
 }
