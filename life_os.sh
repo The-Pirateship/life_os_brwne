@@ -7,7 +7,6 @@ readonly VERSION="v0.0.2"
 readonly PERSONAL="personal"
 
 # ----- PRINT FUNCTIONS -----
-
 # set text colours if supported
 _colours() {
   if [[ "$(tput colors)" -ge 8 ]] \
@@ -19,7 +18,7 @@ _colours() {
     YELLOW="$(tput setaf 3)"         # yellow
     BLUE="$(tput setaf 4)"           # blue
     MAGENTA="$(tput setaf 5)"        # magenta
-    CYAN="$(tput setaf 6)"           # cyan
+    CYAN="$(tput setaf 6)"              # cyan
     B_RED="$(tput bold setaf 1)"     # bold red
     B_GREEN="$(tput bold setaf 2)"   # bold green
     B_YELLOW="$(tput bold setaf 3)"  # bold yellow
