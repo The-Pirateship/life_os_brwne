@@ -75,7 +75,7 @@ ${YELLOW}Commands:${NC}
 ${YELLOW}Example:${NC}
   ./life_os ${CYAN}--no-colour update${NC}
 
-EOF
+EOF   
 }
 
 # ----- COMMANDS -----
